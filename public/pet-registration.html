@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .preview-image {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="mb-4">Register Your Pet</h2>
+            <form id="petRegistrationForm">
+                <div class="mb-3">
+                    <label for="petName" class="form-label">Pet Name</label>
+                    <input type="text" class="form-control" id="petName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="petAge" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="petAge" required>
+                </div>
+                <div class="mb-3">
+                    <label for="petImage" class="form-label">Pet Picture</label>
+                    <input type="file" class="form-control" id="petImage" accept="image/*" required>
+                    <img id="imagePreview" class="preview-image d-none">
+                </div>
+                <div class="mb-3">
+                    <label for="brushingFrequency" class="form-label">Brushing Frequency (times per week)</label>
+                    <input type="number" class="form-control" id="brushingFrequency" required>
+                </div>
+                <div class="mb-3">
+                    <label for="medication" class="form-label">Medication</label>
+                    <input type="text" class="form-control" id="medication" required>
+                </div>
+                <div class="mb-3">
+                    <label for="medicationFrequency" class="form-label">Medication Frequency (times per day)</label>
+                    <input type="number" class="form-control" id="medicationFrequency" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Register Pet</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Image preview
+        document.getElementById('petImage').addEventListener('change', function(e) {
+            const preview = document.getElementById('imagePreview');
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('d-none');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Form submission
+        document.getElementById('petRegistrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('name', document.getElementById('petName').value);
+            formData.append('age', document.getElementById('petAge').value);
+            formData.append('image', document.getElementById('petImage').files[0]);
+            formData.append('brushing_frequency', document.getElementById('brushingFrequency').value);
+            formData.append('medication', document.getElementById('medication').value);
+            formData.append('medication_frequency', document.getElementById('medicationFrequency').value);
+
+            try {
+                const response = await fetch('/api/register-pet.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('Pet registered successfully!');
+                    window.location.href = '/dashboard.html';
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                alert('Error submitting form: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html> 
