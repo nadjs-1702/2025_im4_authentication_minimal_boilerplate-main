@@ -1,11 +1,14 @@
 <?php
 // logout.php
 session_start();
-$_SESSION = [];
+
+// Clear all session variables
+$_SESSION = array();
+
+// Destroy the session
 session_destroy();
 
-// Return a success response instead of redirecting
-header('Content-Type: application/json');
-echo json_encode(["status" => "success"]);
+// Redirect to login page
+header('Location: ../login.html');
 exit;
 ?>

@@ -2,25 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;500;600;700&family=Modak&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Register</h1>
+    <div class="container">
+      <h1>Register</h1>
 
-    <form id="registerForm">
-      <div>
-        <label>Email</label>
-        <input type="email" id="email" required />
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" id="password" required />
-      </div>
-      <button type="submit">Register</button>
-    </form>
-
-    <p>Already have an account? <a href="login.html">Login here</a>.</p>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn">Register</button>
+          <a href="login.html" class="btn">Back to Login</a>
+        </div>
+      </form>
+      <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
 
     <script src="js/register.js"></script>
   </body>
