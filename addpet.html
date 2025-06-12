@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Pet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Pet</h1>
+        <form id="add-pet-form">
+            <h2>Basic Information</h2>
+            <div class="form-group">
+                <label for="pet-name">Pet Name:</label>
+                <input type="text" id="pet-name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="pet-age">Age:</label>
+                <input type="number" id="pet-age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="pet-image">Image:</label>
+                <input type="file" id="pet-image" name="image" accept="image/*">
+            </div>
+
+            <h2>Care Information</h2>
+            <div class="form-group">
+                <label for="brushing-frequency">Brushing Frequency (times per week):</label>
+                <input type="number" id="brushing-frequency" name="brushing_frequency" min="0">
+            </div>
+            <div class="form-group">
+                <label for="medication">Medication:</label>
+                <input type="text" id="medication" name="medication" placeholder="Enter medication details">
+            </div>
+            <div class="form-group">
+                <label for="medication-frequency">Medication Frequency (times per day):</label>
+                <input type="number" id="medication-frequency" name="medication_frequency" min="0">
+            </div>
+            <div class="form-group">
+                <label for="food">Food:</label>
+                <input type="text" id="food" name="food" placeholder="Enter food type">
+            </div>
+            <div class="form-group">
+                <label for="food-frequency">Food Frequency (times per day):</label>
+                <input type="number" id="food-frequency" name="food_frequency" min="0">
+            </div>
+
+            <button type="submit" class="btn">Add Pet</button>
+        </form>
+        <a href="protected.html" class="btn">Back to Pets</a>
+    </div>
+    <script src="js/add-pet.js"></script>
+</body>
+</html> 
