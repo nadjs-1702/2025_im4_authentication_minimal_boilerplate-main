@@ -7,6 +7,18 @@ body {
   color: #333;
 }
 
+/* Login and Register specific background */
+body.login-page,
+body.register-page {
+  background-image: url('background_login.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -67,17 +79,15 @@ h2 {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-<<<<<<< HEAD
 
 .btn-logout {
-  background-color:  #FF82AC;
+  background-color: #FF82AC;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
-<<<<<<< HEAD
 
 .btn-logout:hover {
   background-color: #c0392b;
@@ -365,7 +375,3 @@ h2 {
     padding: 16px 0 12px 0;
   }
 }
-=======
->>>>>>> parent of 71600fc (YIIIIPIII ES FUNktioniert)
-=======
->>>>>>> parent of 71600fc (YIIIIPIII ES FUNktioniert)

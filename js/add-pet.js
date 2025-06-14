@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('addPetForm');
-    if (!form) {
-        console.error('Add Pet form not found!');
-        return;
-    }
+    const form = document.getElementById('add-pet-form');
+    
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
