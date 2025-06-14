@@ -23,7 +23,7 @@ body.register-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
+  background-color:#FF82AC;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -33,7 +33,7 @@ h1, h2, h3 {
   font-family: 'Modak', cursive;
   color: #353B84;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #FEB849;
+  -webkit-text-stroke-color:  #FFE7E3;
   font-weight: 400;
   font-style: normal;
   line-height: 24px;
@@ -71,7 +71,7 @@ h2 {
   border: none;
   cursor: pointer;
   background-color:#353B84;
-  color: #FEB849;
+  color:  #FFE7E3;
   display: inline-block;
 }
 
@@ -160,7 +160,7 @@ h2 {
 .task-pet-name {
   font-family: 'Modak', cursive;
   font-size: 1.6em;
-  color: #e74c3c;
+  color:#353B84;
   margin-bottom: 10px;
   font-weight: normal;
   letter-spacing: 0.5px;
@@ -205,7 +205,7 @@ h2 {
 }
 
 .pet-detail-section h3 {
-  color: #e74c3c;
+  color:#353B84;
   padding-bottom: 10px;
   margin-bottom: 15px;
   font-size: 1.8em;
